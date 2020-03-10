@@ -8,7 +8,7 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <PremiumRecipeCard />
+        <PremiumRecipeCard class="card-demo" />
       </div>
     </div>
   </div>
@@ -53,8 +53,12 @@ export default {
 
 /** Remove these styles when done */
 .premium-recipe-wrapper {
-  margin-top: 100px;
+  margin: 100px 0;
   border: 2px dashed red;
   padding: 16px;
+}
+
+.card-demo {
+  margin: 50px auto;
 }
 </style>
