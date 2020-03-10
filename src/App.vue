@@ -24,9 +24,8 @@
           <p>Basic card with no title. Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
         </Card>
 
-        <Card class="card-demo" title="Basic Card with tall image" height="500px" img="dumplings.jpg">
+        <Card class="card-demo" title="Basic Card with tall image, no content and title that is longer than 2 lines" height="500px" img="dumplings.jpg">
         </Card>
-
       </div>
     </div>
   </div>
