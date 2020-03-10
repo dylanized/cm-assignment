@@ -97,4 +97,9 @@ export default {
 .card-body {
   padding: 1rem 1.25rem .35rem 1.25rem;
 }
+
+.card-body p {
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
 </style>
