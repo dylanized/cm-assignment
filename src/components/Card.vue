@@ -5,7 +5,7 @@
       <span v-if="badge" class="card-header-badge">{{ badge }}</span>
     </div>
     <div class="card-body">
-      <h4 class="card-title">{{ title }}</h4>
+      <h4 class="card-title">{{ computedTitle }}</h4>
       <slot></slot>
     </div>
   </section>
@@ -34,6 +34,10 @@ export default {
   computed: {
     computedHeaderStyle() {
       return "background-image: url('" + require(`@/assets/${this.img}`) + "'); height: " + this.height + ";";
+    },
+    computedTitle() {
+      const lastSpace = this.title.substring(0, 61).lastIndexOf(" ");
+      return this.title.length > 64 ? this.title.substring(0, lastSpace) + "…" : this.title;
     },
   },
 };
