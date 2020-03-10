@@ -8,26 +8,28 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
-        <Card class="card-demo" title="Here is a basic card">
-          <template v-slot:card-header>
-            Card Header
-          </template>
-          <p>Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu. Maecenas in euismod sapien, vel sollicitudin justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent pretium nisi sed sapien facilisis facilisis. Quisque mi lorem, pharetra in egestas ac, varius in lectus. Sed eu tempus mauris, sit amet fringilla turpis. Etiam dapibus accumsan convallis.</p>
+        <Card class="card-demo" title="Here is a basic card" img="pizza.jpg" badge="Card Badge">
+          <p>Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
         </Card>
-        <PremiumRecipeCard class="card-demo" />
+
+        <Card class="card-demo" title="Here is a basic card with a longer title that stretches to two lines" height="150px" img="pancakes.jpg">
+          <p>Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
+        </Card>
+
+        <Card class="card-demo" title="Here is a basic card with no header">
+          <p>Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
+        </Card>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import PremiumRecipeCard from "./components/PremiumRecipeCard.vue";
 import Card from "./components/Card.vue";
 
 export default {
   name: "App",
   components: {
-    PremiumRecipeCard,
     Card,
   }
 };
@@ -64,9 +66,11 @@ export default {
   margin: 100px 0;
   border: 2px dashed red;
   padding: 16px;
+  background-color: #e5e5e5;
 }
 
 .card-demo {
+  width: 250px;
   margin: 50px auto;
 }
 </style>
