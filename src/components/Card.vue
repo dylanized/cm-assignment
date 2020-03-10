@@ -1,11 +1,11 @@
 <template>
-  <section class="card">
+  <section class="card" :class="this.clickable ? 'clickable' : ''" @click="emitClick">
     <div v-if="img" class="card-header" :style="computedHeaderStyle">
       <div class="card-header-overlay"></div>
       <span v-if="badge" class="card-header-badge">{{ badge }}</span>
     </div>
     <div class="card-body">
-      <h4 class="card-title">{{ computedTitle }}</h4>
+      <h4 v-if="title" class="card-title">{{ computedTitle }}</h4>
       <slot></slot>
     </div>
   </section>
@@ -29,7 +29,11 @@ export default {
     height: {
       type: String,
       default: "200px",
-    }
+    },
+    clickable: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     computedHeaderStyle() {
@@ -38,6 +42,11 @@ export default {
     computedTitle() {
       const lastSpace = this.title.substring(0, 61).lastIndexOf(" ");
       return this.title.length > 64 ? this.title.substring(0, lastSpace) + "…" : this.title;
+    },
+  },
+  methods: {
+    emitClick() {
+      if (this.clickable) this.$emit('click');
     },
   },
 };
@@ -55,7 +64,7 @@ export default {
   color: #393C40;
 }
 
-.card.has-action {
+.card.clickable {
   cursor: pointer;
 }
 
@@ -63,7 +72,7 @@ export default {
   transition: opacity .3s;
 }
 
-.card.has-action:hover .card-header-overlay {
+.card.clickable:hover .card-header-overlay {
   opacity: 0;
 }
 
