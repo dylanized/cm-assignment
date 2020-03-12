@@ -8,6 +8,10 @@
       <p>See the README file for assignment requirements.</p>
 
       <div class="premium-recipe-wrapper">
+        <Card class="card-demo" title="Here is a clickable card" img="dinner.jpg" badge="Card Badge" @click="displayClicked" clickable="true">
+          <p>Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
+        </Card>
+
         <Card class="card-demo" title="Here is a basic card" img="pizza.jpg" badge="Card Badge">
           <p>Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
         </Card>
@@ -21,10 +25,7 @@
         </Card>
 
         <Card class="card-demo" height="230px" img="burgers.jpg">
-          <p>Basic card with no title. Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
-        </Card>
-
-        <Card class="card-demo" title="Basic Card with tall image, no content and title that is longer than 2 lines" height="500px" img="dumplings.jpg">
+          <p>Basic card with no title and taller image. Card body lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi semper ante tortor, nec congue turpis vulputate eu.</p>
         </Card>
       </div>
     </div>
@@ -38,7 +39,12 @@ export default {
   name: "App",
   components: {
     Card,
-  }
+  },
+  methods: {
+    displayClicked() {
+      alert('clicked');
+    },
+  },
 };
 </script>
 
