@@ -73,7 +73,7 @@ export default {
 }
 
 .card.clickable:hover .card-header-overlay {
-  opacity: 0;
+  opacity: 0.3;
 }
 
 .card-header {
@@ -84,7 +84,8 @@ export default {
 }
 
 .card-header-overlay {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(22, 27, 35, 0.2) 70.94%, rgba(26, 29, 34, 0.79) 106.25%);
+  background-color: #fff;
+  opacity: 0;
   height: 100%;
 }
 
