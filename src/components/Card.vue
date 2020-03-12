@@ -2,6 +2,7 @@
   <section class="card" :class="this.clickable ? 'clickable' : ''" @click="emitClick">
     <div v-if="img" class="card-header" :style="computedHeaderStyle">
       <div class="card-header-overlay"></div>
+      <div class="card-header-hover"></div>
       <span v-if="badge" class="card-header-badge">{{ badge }}</span>
     </div>
     <div class="card-body">
@@ -68,14 +69,6 @@ export default {
   cursor: pointer;
 }
 
-.card .card-header-overlay {
-  transition: opacity .3s;
-}
-
-.card.clickable:hover .card-header-overlay {
-  opacity: 0.3;
-}
-
 .card-header {
   height: 200px;
   background-image: url(../assets/pizza.jpg);
@@ -84,9 +77,24 @@ export default {
 }
 
 .card-header-overlay {
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(22, 27, 35, 0.2) 70.94%, rgba(26, 29, 34, 0.79) 106.25%);
+}
+
+.card-header-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   background-color: #fff;
   opacity: 0;
-  height: 100%;
+  transition: opacity 0.3s;
+}
+
+.card.clickable:hover .card-header-hover {
+  opacity: 0.3;
+  background-color: #fff;
 }
 
 .card-header-badge {
